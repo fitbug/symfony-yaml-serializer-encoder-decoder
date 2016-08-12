@@ -88,14 +88,26 @@ class YamlEncode implements EncoderInterface
     public function encode($data, $format, array $context = [])
     {
         $context = $this->resolveContext($context);
-        $options = $this->contextToOptions($context);
 
-        $encodedData = Yaml::dump(
-            $data,
-            $context[ self::OPTION_INLINE ],
-            $context[ self::OPTION_INDENT ],
-            $options
-        );
+        if ($this->isYamlOldStyleInterface()) {
+            $encodedData = Yaml::dump(
+                $data,
+                $context[ self::OPTION_INLINE ],
+                $context[ self::OPTION_INDENT ],
+                $context[ self::OPTION_EXCEPTION_ON_INVALID_TYPE ],
+                $context[ self::OPTION_OBJECT ]
+            );
+
+        } else {
+            $options = $this->contextToOptions($context);
+
+            $encodedData = Yaml::dump(
+                $data,
+                $context[ self::OPTION_INLINE ],
+                $context[ self::OPTION_INDENT ],
+                $options
+            );
+        }
 
         return $encodedData;
     }
@@ -161,5 +173,10 @@ class YamlEncode implements EncoderInterface
     public function supportsEncoding($format)
     {
         return $format == self::SUPPORTED_ENCODING_YAML;
+    }
+
+    private function isYamlOldStyleInterface()
+    {
+        return !defined("Symfony\\Component\\Yaml\\Yaml::DUMP_OBJECT");
     }
 }

@@ -67,9 +67,21 @@ class YamlDecode implements DecoderInterface
     public function decode($data, $format, array $context = [])
     {
         $context = $this->resolveContext($context);
-        $options = $this->contextToOptions($context);
 
-        return Yaml::parse($data, $options);
+        if ($this->isYamlOldStyleInterface()) {
+            $results = Yaml::parse(
+                $data,
+                $context[ self::OPTION_EXCEPTION_ON_INVALID_TYPE ],
+                $context[ self::OPTION_OBJECT ],
+                $context[ self::OPTION_OBJECT_FOR_MAP ]
+            );
+        } else {
+            $options = $this->contextToOptions($context);
+
+            $results = Yaml::parse($data, $options);
+        }
+
+        return $results;
     }
 
     /**
@@ -130,5 +142,10 @@ class YamlDecode implements DecoderInterface
         }
 
         return $bitMaskedOption;
+    }
+
+    private function isYamlOldStyleInterface()
+    {
+        return !defined("Symfony\\Component\\Yaml\\Yaml::PARSE_EXCEPTION_ON_INVALID_TYPE");
     }
 }
