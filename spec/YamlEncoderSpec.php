@@ -4,14 +4,25 @@ namespace spec\Fitbug\SymfonySerializer\YamlEncoderDecoder;
 
 use Fitbug\SymfonySerializer\YamlEncoderDecoder\YamlDecode;
 use Fitbug\SymfonySerializer\YamlEncoderDecoder\YamlEncode;
-use Fitbug\SymfonySerializer\YamlEncoderDecoder\YamlEncoder;
 use PhpSpec\ObjectBehavior;
 
 class YamlEncoderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType(YamlEncoder::class);
+        $this->shouldHaveType('Fitbug\SymfonySerializer\YamlEncoderDecoder\YamlEncoder');
+    }
+
+
+    function it_is_a_decoder()
+    {
+        $this->shouldImplement('Symfony\Component\Serializer\Encoder\DecoderInterface');
+    }
+
+
+    function it_is_a_encoder()
+    {
+        $this->shouldImplement('Symfony\Component\Serializer\Encoder\EncoderInterface');
     }
 
     function it_proxies_the_supports_decoding_method(YamlDecode $yamlDecode)
