@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/fitbug/symfony-yaml-serializer-encoder-decoder/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/fitbug/symfony-yaml-serializer-encoder-decoder/?branch=master)
 [![Build Status](https://travis-ci.org/fitbug/symfony-yaml-serializer-encoder-decoder.svg?branch=master)](https://travis-ci.org/fitbug/symfony-yaml-serializer-encoder-decoder)
-[![Dependency Status](https://www.versioneye.com/user/projects/57a26855447bcc004d5ec866/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57a26855447bcc004d5ec866)
+[![Dependency Status](https://www.versioneye.com/user/projects/57adb171bd0cfa002e137ac4/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57adb171bd0cfa002e137ac4)
 [![Latest Stable Version](https://poser.pugx.org/fitbug/symfony-yaml-serializer-encoder-decoder/v/stable)](https://packagist.org/packages/fitbug/symfony-yaml-serializer-encoder-decoder)
 [![License](https://poser.pugx.org/fitbug/symfony-yaml-serializer-encoder-decoder/license)](https://packagist.org/packages/fitbug/symfony-yaml-serializer-encoder-decoder)
 

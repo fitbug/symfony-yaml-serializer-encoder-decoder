@@ -7,4 +7,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Everything, initial release
 
-[0.1.0]: https://github.com/fitbug/symfony-yaml-serializer-encoder-decoder/commit/0d8dbdc2590bc033adc9dd5cdb474c87c913204e
+[0.1.0]: https://github.com/fitbug/symfony-yaml-serializer-encoder-decoder/releases/tag/v0.1.0
