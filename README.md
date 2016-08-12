@@ -20,7 +20,7 @@ You'll need to install:
 ### Installing
 
 ```bash
-composer require --dev fitbug/symfony-yaml-serializer-encoder-decoder
+composer require fitbug/symfony-yaml-serializer-encoder-decoder
 ```
 
 ## Usage
